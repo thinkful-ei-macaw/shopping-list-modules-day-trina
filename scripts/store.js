@@ -37,6 +37,10 @@ import item from './item.js';
   this.items = this.items.filter(item => item.id !== id);
  }
 
+ function toggleCheckedItemsFilter (){
+   this.hideCheckedItems = !this.hideCheckedItems;
+ }
+
 
 
  export default {
@@ -46,5 +50,6 @@ import item from './item.js';
     addItem,
     findAndToggleChecked,
     findAndUpdateName,
-    findAndDelete
+    findAndDelete,
+    toggleCheckedItemsFilter
   };
