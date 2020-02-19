@@ -3,9 +3,8 @@ import item from './item.js';
  let items = [];
  let hideCheckedItems = false;
 
- function findbyId(id){
-   items.find(id);
-   return id;
+ function findById(id){
+  return this.items.find(item => item.id === id);
  }
 
  function addItem(name){
@@ -20,14 +19,14 @@ import item from './item.js';
 
 //is this right???
  function findAndToggleChecked(id){
-  let toggle = this.findbyId(id);
+  let toggle = this.findById(id);
   toggle.checked = !toggle.checked;
  }
 
  function findAndUpdateName(id, newName){
   try {
     item.validateName(newName);
-    this.findbyId(id);
+    this.findById(id);
   }
   catch (error) {
     console.log(`Cannot update name: ${error.message}`);
@@ -43,7 +42,7 @@ import item from './item.js';
  export default {
     items,
     hideCheckedItems,
-    findbyId,
+    findById,
     addItem,
     findAndToggleChecked,
     findAndUpdateName,
