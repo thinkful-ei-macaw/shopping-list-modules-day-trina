@@ -1,9 +1,4 @@
 
-export default {
-  validateName,
-  create
-};
-
 function validateName(name) {
   if (!name){
     throw TypeError ('Name must not be blank');
@@ -19,6 +14,10 @@ function create (name){
    return item;
 }
 
+export default {
+  validateName,
+  create
+};
 
 
 
